@@ -5,7 +5,7 @@
 #
 
 # Pull base image.
-FROM docker pull yaronr/openjdk-7-jre
+FROM yaronr/openjdk-7-jre
 
 ENV ES_PKG_NAME elasticsearch-1.4.0
 
