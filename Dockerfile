@@ -23,6 +23,11 @@ VOLUME ["/data"]
 # Mount elasticsearch.yml config
 ADD config/elasticsearch.yml /elasticsearch/config/elasticsearch.yml
 
+# Install Plugins.
+RUN \
+  /elasticsearch/bin/plugin --install mobz/elasticsearch-head && \
+  /elasticsearch/bin/plugin --install lukas-vlcek/bigdesk
+
 # Define working directory.
 WORKDIR /data
 
