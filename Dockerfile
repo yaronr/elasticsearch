@@ -12,7 +12,7 @@ ENV ES_PKG_NAME elasticsearch-1.4.0
 # Install ElasticSearch.
 RUN \
   cd / && \
-  wget https://download.elasticsearch.org/elasticsearch/elasticsearch/$ES_PKG_NAME.tar.gz && \
+  wget --progress=bar:force --retry-connrefused -t 5 https://download.elasticsearch.org/elasticsearch/elasticsearch/$ES_PKG_NAME.tar.gz && \
   tar xvzf $ES_PKG_NAME.tar.gz && \
   rm -f $ES_PKG_NAME.tar.gz && \
   mv /$ES_PKG_NAME /elasticsearch
