@@ -26,8 +26,7 @@ ADD config/elasticsearch.yml /elasticsearch/config/elasticsearch.yml
 # Define working directory.
 WORKDIR /data
 
-# Define default command.
-CMD ["/elasticsearch/bin/elasticsearch"]
+ENTRYPOINT ["/elasticsearch/bin/elasticsearch"]
 
 # Expose ports.
 #   - 9200: HTTP
