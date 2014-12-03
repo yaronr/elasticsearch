@@ -31,7 +31,10 @@ RUN \
 # Define working directory.
 WORKDIR /data
 
-ENTRYPOINT ["/elasticsearch/bin/elasticsearch"]
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod a+x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
 
 # Expose ports.
 #   - 9200: HTTP
