@@ -26,7 +26,8 @@ ADD config/elasticsearch.yml /elasticsearch/config/elasticsearch.yml
 # Install Plugins.
 RUN \
   /elasticsearch/bin/plugin --install mobz/elasticsearch-head && \
-  /elasticsearch/bin/plugin --install lukas-vlcek/bigdesk
+  /elasticsearch/bin/plugin --install lukas-vlcek/bigdesk && \
+  /elasticsearch/bin/plugin -install lmenezes/elasticsearch-kopf
 
 # Define working directory.
 WORKDIR /data
