@@ -46,3 +46,6 @@ EXPOSE 9300
 
 #Ignore /etc/hosts
 RUN sed 's/^\(hosts:[\ ]*\)\(files\)\ \(dns\)$/\1\3 \2/' -i /etc/nsswitch.conf
+
+#change logging level of discovery to trace
+RUN sed 's/#discovery: TRACE/discovery: TRACE/' -i /elasticsearch/config/logging.yml
