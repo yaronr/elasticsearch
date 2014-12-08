@@ -25,9 +25,10 @@ ADD config/elasticsearch.yml /elasticsearch/config/elasticsearch.yml
 
 # Install Plugins.
 RUN \
-  /elasticsearch/bin/plugin --install mobz/elasticsearch-head && \
-  /elasticsearch/bin/plugin --install lukas-vlcek/bigdesk && \
-  /elasticsearch/bin/plugin -install lmenezes/elasticsearch-kopf
+  /elasticsearch/bin/plugin -i mobz/elasticsearch-head && \
+  /elasticsearch/bin/plugin -i lukas-vlcek/bigdesk && \
+  /elasticsearch/bin/plugin -i lmenezes/elasticsearch-kopf && \
+  /elasticsearch/bin/plugin -i elasticsearch/marvel/latest
 
 # Define working directory.
 WORKDIR /data
@@ -42,3 +43,6 @@ ENTRYPOINT ["/entrypoint.sh"]
 #   - 9300: transport
 EXPOSE 9200
 EXPOSE 9300
+
+#Ignore /etc/hosts
+RUN sed 's/^\(hosts:[\ ]*\)\(files\)\ \(dns\)$/\1\3 \2/' -i /etc/nsswitch.conf
