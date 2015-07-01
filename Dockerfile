@@ -7,7 +7,7 @@
 # Pull base image.
 FROM multicloud/openjdk-8-jre
 
-ENV ES_PKG_NAME elasticsearch-1.5.0
+ENV ES_PKG_NAME elasticsearch-1.6.0
 
 # Install ElasticSearch.
 RUN \
