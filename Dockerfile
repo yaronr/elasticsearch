@@ -5,9 +5,9 @@
 #
 
 # Pull base image.
-FROM yaronr/openjdk-7-jre
+FROM multicloud/openjdk-8-jre
 
-ENV ES_PKG_NAME elasticsearch-1.4.0
+ENV ES_PKG_NAME elasticsearch-1.5.0
 
 # Install ElasticSearch.
 RUN \
