@@ -5,7 +5,7 @@
 #
 
 # Pull base image.
-FROM multicloud/openjdk-8-jre
+FROM multicloud/jre-8-oracle
 
 ENV ES_PKG_NAME elasticsearch-1.6.0
 
